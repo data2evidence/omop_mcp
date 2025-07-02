@@ -103,7 +103,7 @@ class OmopDatabase:
                 raise ValueError(
                     f"Unsupported database type in connection string: {connection_string}. Supported types are: {', '.join(self.supported_databases)}"
                 )
-            self.conn = ibis.connect(connection_string)
+            self.conn = ibis.connect(connection_string, read_only=read_only)
         except Exception as e:
             raise ConnectionError(f"Failed to connect to database: {str(e)}")
 
