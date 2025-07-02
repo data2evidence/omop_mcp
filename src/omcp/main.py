@@ -103,7 +103,7 @@ def main():
     """Main function to run the MCP server."""
 
     mcp_app.run(
-        transport="stdio",
+        transport="sse",
     )
 
 
